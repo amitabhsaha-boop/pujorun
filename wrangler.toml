@@ -1,0 +1,14 @@
+# The Worker name must match the name of the Worker you create in Cloudflare.
+name = "pujorun"
+main = "src/worker.js"
+compatibility_date = "2025-09-01"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "pujo-run"
+# Cloudflare dashboard > Storage & Databases > D1 > pujo-run > copy the Database ID
+database_id = "924cdec8-e540-458a-bf5b-7f1565938a88"
