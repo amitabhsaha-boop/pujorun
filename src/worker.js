@@ -19,7 +19,7 @@ export default{async fetch(req,env){
 }};
 
 async function board(env,id){
-  const top=(await env.DB.prepare('SELECT name,best FROM players ORDER BY best DESC,updated ASC LIMIT 20').all()).results;
+  const top=(await env.DB.prepare('SELECT name,best FROM players ORDER BY best DESC,updated ASC LIMIT 10').all()).results;
   let me=null;
   if(id){
     const p=await env.DB.prepare('SELECT best FROM players WHERE id=?').bind(String(id).slice(0,64)).first();
